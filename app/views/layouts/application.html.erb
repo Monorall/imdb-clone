@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ImdbClone</title>
+    <title>Imdb</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,14 @@
   </head>
 
   <body>
+  <div class="content">
     <%= yield %>
+  </div>
   </body>
+
+  <footer>
+    <p>
+      Copyright &copy; <%= Time.now.year %>
+    </p>
+  </footer>
 </html>
