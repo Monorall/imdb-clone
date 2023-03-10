@@ -1,0 +1,15 @@
+<%= form_with(model: movie) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, autofocus: true %>
+
+  <%= f.label :text %>
+  <%= f.text_area :text, rows: 5 %>
+
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+
+  <%= f.submit %>
+<% end %>
