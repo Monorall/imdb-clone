@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html>
-<header>
-  <nav>
-    <ul>
-      <li>
-        <a href="/movies">All Movies</a>
-      </li>
-    </ul>
-  </nav>
-</header>
+
+  <%= render "layouts/header" %>
+
   <head>
+
     <title>Imdb</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -25,9 +20,6 @@
   </div>
   </body>
 
-  <footer>
-    <p>
-      Copyright &copy; <%= Time.now.year %>
-    </p>
-  </footer>
+  <%= render "layouts/footer" %>
+
 </html>
