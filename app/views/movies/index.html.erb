@@ -5,8 +5,12 @@
         <%= link_to(movie.title, movie) %>
       </h2>
       <p>
-        <%= truncate(movie.text, length: 150, separator: ' ') %>
+        <%= truncate(movie.text, length: 300, separator: ' ') %>
       </p>
     </div>
   </section>
 <% end %>
+
+<section class="admin">
+  <%= link_to "Add New Movie", new_movie_path, class: "button" %>
+</section>
