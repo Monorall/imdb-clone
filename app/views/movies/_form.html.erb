@@ -1,4 +1,6 @@
 <%= form_with(model: movie) do |f| %>
+  <%= render "shared/errors", object: movie %>
+
   <%= f.label :image_file_name %>
   <%= f.text_field :image_file_name %>
 
@@ -10,7 +12,7 @@
   <%= f.text_area :text, rows: 5 %>
 
   <%= f.label :rating %>
-  <%= f.text_field :rating %>
+  <%= f.select :rating, Movie::RATINGS, prompt: "Pick one" %>
 
   <%= f.label :category %>
   <%= f.text_field :category %>
