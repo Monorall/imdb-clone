@@ -1,4 +1,8 @@
 class Movie < ApplicationRecord
+  has_many :reviews
+
+  has_many :reviews, dependent: :destroy
+
   validates :title, :rating, :text, presence: true
   validates :text, length: { minimum: 25 }
   validates :image_file_name, format: {
