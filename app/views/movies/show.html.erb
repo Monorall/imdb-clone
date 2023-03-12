@@ -7,14 +7,14 @@
     <h2>
       Rating: &bull; <%= @movie.rating %>
     </h2>
+    <p>
+      Descriptions: "<%= @movie.text %>"
+    </p>
     <div class="reviews">
       <%= average_stars(@movie) %>
       <%= link_to pluralize(@movie.reviews.size, "review"),
                   movie_reviews_path(@movie) %>
     </div>
-    <p>
-      Descriptions: "<%= @movie.text %>"
-    </p>
   </div>
 </section>
 
