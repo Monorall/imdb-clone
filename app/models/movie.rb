@@ -12,4 +12,8 @@ class Movie < ApplicationRecord
 
   RATINGS = %w(1 2 3 4 5 6 7 8 9 10)
   validates :rating, inclusion: { in: RATINGS }
+
+  def average_stars
+    reviews.average(:stars) || 0.0
+  end
 end
