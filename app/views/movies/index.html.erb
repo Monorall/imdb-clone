@@ -10,9 +10,9 @@
       <p>
         <%= truncate(movie.text, length: 300, separator: ' ') %>
       </p>
-      <span class="stars">
+      <div class="stars">
         <%= average_stars(movie) %>
-      </span>
+      </div>
     </div>
   </section>
 <% end %>
