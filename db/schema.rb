@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_13_152112) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_15_054025) do
   create_table "characterizations", force: :cascade do |t|
     t.integer "movie_id", null: false
     t.integer "genre_id", null: false
@@ -36,6 +36,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_152112) do
     t.string "image_file_name"
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "movie_id", null: false
+    t.integer "stars"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_ratings_on_movie_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "stars"
     t.text "comment"
@@ -57,5 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_152112) do
 
   add_foreign_key "characterizations", "genres"
   add_foreign_key "characterizations", "movies"
+  add_foreign_key "ratings", "movies"
+  add_foreign_key "ratings", "users"
   add_foreign_key "reviews", "movies"
 end

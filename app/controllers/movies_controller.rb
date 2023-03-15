@@ -29,11 +29,23 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
   end
 
+  def create
+    @movie = Movie.new(movie_params)
+    @movie.rating = 0 # инициализация оценки
+
+    if @movie.save
+      flash[:notice] = "Movie successfully created!"
+      redirect_to @movie
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def update
     @movie = Movie.find(params[:id])
-    if @movie.update(movie_params)
-      flash[:notice] = "Movie successfully update!"
 
+    if @movie.update(movie_params)
+      flash[:notice] = "Movie successfully updated!"
       redirect_to @movie
     else
       render :edit, status: :unprocessable_entity
@@ -49,6 +61,7 @@ class MoviesController < ApplicationController
 
 
   private
+
 
   def movie_params
     params.require(:movie).

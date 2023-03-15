@@ -589,3 +589,38 @@ section.errors h3 {
     position: absolute;
     top: 0;
 }
+
+.star-icon {
+    font-size: 1.5rem;
+}
+
+.star.filled {
+    color: yellow;
+}
+
+.star-rating {
+    display: inline-block;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: left;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    display: inline-block;
+    font-size: 20px;
+    padding: 0 2px;
+    cursor: pointer;
+}
+
+.star-rating label:before {
+    content: "\2605";
+}
+
+.star-rating input:checked ~ label:before {
+    color: gold;
+}
+

@@ -13,6 +13,9 @@
       <div class="stars">
         <%= average_stars(movie) %>
       </div>
+      <% if current_user %>
+        <%= render partial: "movies/rating_form", locals: { movie: movie } %>
+      <% end %>
     </div>
   </section>
 <% end %>

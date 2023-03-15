@@ -22,6 +22,9 @@ gem "importmap-rails"
 
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 
+gem 'hotwire-rails'
+gem 'turbo-rails'
+gem 'stimulus-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
