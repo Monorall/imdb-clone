@@ -1,21 +1,22 @@
 <% @movies.each do |movie| %>
   <section class="movie">
-    <div class="image">
-      <%= image_tag movie.image_file_name %>
-    </div>
-    <div class="summary">
-      <h2>
-        <%= link_to(movie.title, movie) %>
-      </h2>
-      <p>
-        <%= truncate(movie.text, length: 300, separator: ' ') %>
-      </p>
-      <div class="stars">
-        <%= average_stars(movie) %>
+    <div class="image-container">
+      <div class="image">
+        <%= image_tag movie.image_file_name, class: "movie-image" %>
       </div>
-      <% if current_user %>
-        <%= render partial: "movies/rating_form", locals: { movie: movie } %>
-      <% end %>
+    </div>
+    <div class="summary-container">
+      <div class="summary">
+        <h2>
+          <%= link_to(movie.title, movie) %>
+        </h2>
+        <p class="movie-text">
+          <%= truncate(movie.text, length: 300, separator: ' ') %>
+        </p>
+        <div class="stars">
+          <%= average_stars(movie) %>
+        </div>
+      </div>
     </div>
   </section>
 <% end %>
@@ -25,3 +26,4 @@
     <%= link_to "Add New Movie", new_movie_path, class: "button" %>
   </section>
 <% end %>
+
