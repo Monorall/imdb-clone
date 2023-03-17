@@ -20,6 +20,16 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
   end
 
+  def search
+    if params[:genre_id].present?
+      @movies = Movie.joins(:genres).where(genres: { id: params[:genre_id] })
+    else
+      redirect_to movies_path
+    end
+  end
+
+
+
   def create
     @movie = Movie.new(movie_params)
     @movie.rating = 0 # инициализация оценки

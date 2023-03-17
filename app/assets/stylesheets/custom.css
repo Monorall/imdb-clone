@@ -713,3 +713,14 @@ h2 a:hover {
 .star-rating input:checked ~ label:before {
     color: gold;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
