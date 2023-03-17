@@ -1,0 +1,8 @@
+<h1>Search Results</h1>
+<ul>
+  <% @movies.each do |movie| %>
+    <li>
+      <%= link_to movie.title, movie %>
+    </li>
+  <% end %>
+</ul>

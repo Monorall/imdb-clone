@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :genres
+  resources :genres, only: [:show]
   resources :users
   resources :movies do
     resources :reviews
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   get "signup" => "users#new"
+  get 'search_movies', to: 'movies#search'
 
   root "movies#index"
 end
