@@ -1,9 +1,10 @@
 module MoviesHelper
   def average_stars(movie)
-    if movie.average_stars.zero?
-      content_tag(:strong, "No reviews")
+    if movie.ratings.count > 0
+      average = movie.ratings.average(:stars)
+      "Average rating: #{'%.1f' % average} / 10"
     else
-      pluralize(number_with_precision(movie.average_stars, precision: 1) , "star")
+      "No ratings yet"
     end
   end
 end

@@ -1,0 +1,7 @@
+var movieId = <%= @movie.id %>;
+var stars = <%= @rating.stars %>;
+var starsHtml = "<%= j render partial: 'movies/stars', locals: { movie: @movie } %>";
+var ratingFormHtml = "<%= j render partial: 'movies/rating_form', locals: { movie: @movie } %>";
+
+document.querySelector("#rating_form_" + movieId).innerHTML = ratingFormHtml;
+document.querySelector(".stars").innerHTML = starsHtml;

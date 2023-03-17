@@ -1,0 +1,5 @@
+<turbo-stream action="replace" target="rating_form_<%= @movie.id %>">
+  <template>
+    <%= render partial: "movies/rating_form", locals: { movie: @movie } %>
+  </template>
+</turbo-stream>

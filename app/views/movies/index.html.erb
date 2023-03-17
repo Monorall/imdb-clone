@@ -1,10 +1,11 @@
 <% @movies.each do |movie| %>
-  <section class="movie">
+  <section class="movie" data-controller="movie">
     <div class="image-container">
       <div class="image">
         <%= image_tag movie.image_file_name, class: "movie-image" %>
       </div>
     </div>
+
     <div class="summary-container">
       <div class="summary">
         <h2>
@@ -13,9 +14,12 @@
         <p class="movie-text">
           <%= truncate(movie.text, length: 300, separator: ' ') %>
         </p>
-        <div class="stars">
+        <div class="stars" data-movie-target="averageStars" id="movie-<%= movie.id %>-stars">
           <%= average_stars(movie) %>
         </div>
+        <% if current_user %>
+          <%= render "movies/rating_form", movie: movie %>
+        <% end %>
       </div>
     </div>
   </section>
@@ -26,4 +30,3 @@
     <%= link_to "Add New Movie", new_movie_path, class: "button" %>
   </section>
 <% end %>
-
