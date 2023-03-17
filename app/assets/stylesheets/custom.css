@@ -664,3 +664,52 @@ h2 a:hover {
 /*    border-radius: 5px;*/
 /*    transition: background-color 0.3s ease;*/
 /*}*/
+
+.star-rating {
+    display: inline-block;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: left;
+}
+
+.star-rating .rating-star {
+    display: inline-block;
+    font-size: 20px;
+    padding: 0 2px;
+    cursor: pointer;
+}
+
+.star-rating .rating-star:before {
+    content: "\2605";
+}
+
+.star-rating .rating-star[data-value]:hover:before,
+.star-rating .rating-star[data-value]:hover ~ .rating-star:before {
+    color: gold;
+}
+
+.star-rating {
+    display: inline-block;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: left;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    display: inline-block;
+    font-size: 20px;
+    padding: 0 2px;
+    cursor: pointer;
+}
+
+.star-rating label:before {
+    content: "\2605";
+}
+
+.star-rating input:checked ~ label:before {
+    color: gold;
+}

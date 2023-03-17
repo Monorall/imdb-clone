@@ -1,0 +1,7 @@
+<turbo-stream action="replace" target="movie-<%= @rating.movie.id %>-stars">
+  <template>
+    <div class="stars" data-movie-target="averageStars" id="movie-<%= @rating.movie.id %>-stars">
+      <%= average_stars(@rating.movie) %>
+    </div>
+  </template>
+</turbo-stream>

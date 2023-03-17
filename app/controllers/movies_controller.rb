@@ -10,15 +10,6 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
 
-  def create
-    @movie = Movie.new(movie_params)
-    if @movie.save
-      flash[:notice] = "Movie successfully create!"
-      redirect_to @movie
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
   def show
     @movie = Movie.find(params[:id])
     @genres = @movie.genres.order(:name)
