@@ -10,13 +10,27 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+group :development, :test do
+  gem 'sqlite3', '~> 1.4'
+end
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
+
+# My gems
+
+gem 'bootstrap', '~> 5.1', '>= 5.1.3'
+
+gem 'hotwire-rails'
+gem 'turbo-rails'
+gem 'stimulus-rails'
+
+group :production do
+  gem 'pg'
+end
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
@@ -34,7 +48,7 @@ gem "redis", "~> 4.0"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
@@ -62,6 +76,13 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 5.0'
+  gem 'factory_bot_rails', '~> 6.0'
+  gem 'faker', '~> 2.0'
+  gem 'rails-controller-testing'
 end
 
 group :test do

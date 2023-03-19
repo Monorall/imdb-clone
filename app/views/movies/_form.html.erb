@@ -1,0 +1,24 @@
+<%= form_with(model: movie) do |f| %>
+  <%= render "shared/errors", object: movie %>
+
+
+
+  <%= f.label :image_file_name %>
+  <%= f.text_field :image_file_name %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, autofocus: true %>
+
+
+  <%= f.label :text %>
+  <%= f.text_area :text, rows: 5 %>
+
+  <%= f.label :genre_ids, 'Genres' %>
+  <%= f.collection_select :genre_ids, Genre.all, :id, :name, {}, { multiple: true, size: 5 } %>
+
+  <div class="checkboxes">
+    <%= f.collection_check_boxes(:genre_ids, Genre.order(:name), :id, :name) %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
