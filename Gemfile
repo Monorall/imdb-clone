@@ -1,7 +1,8 @@
 source "https://rubygems.org"
+
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.2"
+ruby "3.2.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
@@ -22,11 +23,10 @@ gem "importmap-rails"
 
 # My gems
 
-gem 'bootstrap', '~> 5.1', '>= 5.1.3'
+
 
 gem 'hotwire-rails'
-gem 'turbo-rails'
-gem 'stimulus-rails'
+
 
 group :production do
   gem 'pg'
