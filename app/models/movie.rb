@@ -8,7 +8,7 @@ class Movie < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
   validates :title, :rating, :text, presence: true
-  validates :text, length: { minimum: 25 }
+  validates :text, length: { minimum: 10 }
   validates :image_file_name, format: {
     with: /\w+\.(jpg|png)\z/i,
     message: "must be a JPG or PNG image"

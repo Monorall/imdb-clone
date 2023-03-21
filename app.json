@@ -1,9 +1,9 @@
 {
-  "name": "название вашего приложения",
+  "name": "imdb-clone",
   "env": {
     "RUBY_VERSION": "3.2.1"
   },
-  "buildpacks": [
+  "build-packs": [
     {
       "url": "https://github.com/heroku/heroku-buildpack-ruby.git"
     }
