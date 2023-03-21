@@ -1,0 +1,11 @@
+{
+  "name": "название вашего приложения",
+  "env": {
+    "RUBY_VERSION": "3.2.1"
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-ruby.git"
+    }
+  ]
+}
